@@ -8,8 +8,10 @@ app.set("view engine","ejs")
 app.use(layout)
 app.set('views',path.join(__dirname,'views'))
 
-// Route setup
 
+app.use('public',express.static(path.join(__dirname,'public')));
+
+// Route setup
 const indexroute=require('./routes/index')
 
 app.use('/',indexroute)
